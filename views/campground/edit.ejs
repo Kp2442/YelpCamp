@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+
+<h1>Edit <%= campground.name %></h1>
+
+<form action="/campgrounds/<%=campground.id%>?_method=PUT" method="POST">
+	<div class="form-group">
+		<label for="Name">Name</label>
+		<input
+			type="text"
+			class="form-control"
+			id="Name"
+			aria-describedby="Name"
+			name="campground[name]"
+			value="<%= campground.name %>"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="ImageURL">Image URL</label>
+		<input
+			type="text"
+			class="form-control"
+			id="ImageURL"
+			name="campground[image]"
+			value="<%= campground.image %>"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="description">Description</label>
+		<textarea
+			class="form-control"
+			id="description"
+			name="campground[description]"
+			rows="3"
+		>
+<%= campground.description %></textarea
+		>
+	</div>
+	<button type="submit" class="btn btn-lg btn-outline-success">Submit</button>
+</form>
+
+<% include ../partials/footer %>

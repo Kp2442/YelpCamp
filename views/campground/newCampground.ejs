@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+<h1>Add New Campground</h1>
+
+<form action="/campgrounds" method="POST">
+	<div class="form-group">
+		<label for="Name">Name</label>
+		<input
+			type="text"
+			class="form-control"
+			id="Name"
+			aria-describedby="Name"
+			name="name"
+		/>
+	</div>
+	<div class="form-group">
+		<label for="ImageURL">Image URL</label>
+		<input type="text" class="form-control" id="ImageURL" name="image" />
+	</div>
+	<div class="form-group">
+		<label for="description">Description</label>
+		<textarea
+			class="form-control"
+			id="description"
+			name="description"
+			rows="3"
+		></textarea>
+	</div>
+	<button type="submit" class="btn btn-lg btn-outline-success">Submit</button>
+</form>
+
+<% include ../partials/footer %>

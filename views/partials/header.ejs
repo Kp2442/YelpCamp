@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="/styles/main.css">
+		<title>YelpCamp</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-2 fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/">YelpCamp</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/campgrounds"> Campgrounds <span class="sr-only">(current)</span></a>
+					</ul>
+					<ul class="navbar-nav">
+						<% if(!currentUser){ %>
+							<a class="nav-item nav-link" href="/login">Login</a>
+							<a class="nav-item nav-link" href="/register">Register</a>
+						<% } else { %>
+							<a class="nav-item nav-link" href="#"><%= currentUser.username %></a>
+							<a class="nav-item nav-link" href="/logout">Logout</a>
+						<% } %>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id = 'all-container'class="container mb-3">
+			<% if( error && error.length > 0 ) { %>
+				<div class="alert alert-danger" role="alert">
+					<%= error %>
+				</div>
+			<% } %>
+			<% if( success && success.length > 0 ) { %>
+				<div class="alert alert-success" role="alert">
+					<%= success %>
+				</div>
+			<% } %>
