@@ -15,7 +15,6 @@ const indexRoutes = require("./routes/index"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	commentRoutes = require("./routes/comments");
 
-
 mongoose.connect("mongodb://localhost:27017/yelp_camp", {
 	useNewUrlParser: true,
 	useFindAndModify: false
